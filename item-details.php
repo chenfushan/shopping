@@ -33,6 +33,7 @@
 				<div id="info"></div>
 			</div>
 		</div>
+		
 		<footer>
 			<div id="footer"></div>
 		</footer>
