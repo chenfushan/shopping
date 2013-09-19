@@ -1,0 +1,138 @@
+body{
+	font: 14px Arial,sans-serif;
+	margin-top: 0;
+}
+/*div#header{
+	height: 40px;
+}*/
+div#page{
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/******************************************************/
+/*div#top{
+	height: 120px;
+}
+div#logo{
+	width: 35%;
+	height: 106px;
+	float: left;
+}*/
+/******************************************************/
+/*div#search{
+	width: 65%;
+	height: 76px;
+	float: right;
+	padding-top: 30px;
+}
+div#search-panel{
+	width: 500px;
+	height: 68px;
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+}
+div#search-panel form{
+	float: right;
+}
+div#search-panel input[type = text]{
+	width: 350px;
+	height: 30px;
+	border-radius: 15px;
+	margin-right: 15px;
+}
+input#SearchItem{
+	width: 70px;
+	height: 35px;
+	border-radius: 10px;
+}*/
+/******************************************************/
+div#content{
+	width: 850px;
+	height: 780px;
+}
+/******************************************************/
+div#cg-list{
+	width: 180px;
+	height: 780px;
+	float: left;
+}
+div.cgt ul{
+	list-style-type: none;
+	-webkit-padding-start:0;
+}
+div.cgt ul li{
+	width: 150px;
+	margin-left: 30px;
+	margin-bottom: 8px;
+}
+
+/******************************************************/
+div#item-list{
+	width: 650px;
+	float: right;
+}
+div.item{
+	width: 650px;
+	height: 150px;
+	float: right;
+}
+div.item-pic{
+	width: 150px;
+	height: 150px;
+	float: left;
+}
+div.item-pic img{
+	width: 150px;
+	height: 150px;
+}
+div.item-info{
+	width: 500px;
+	height: 150px;
+	float: left;
+}
+div.item-name{
+	position: relative;
+	top: 30px;
+}
+div.item-price{
+	position: relative;
+	top:50px;
+	left: 20px;
+	font-weight: bold;
+	color: red;
+	float: left;
+}
+/******************************************************/
+div#footer{
+	width: 850px;
+	height: 170px;
+	margin-top: 80px;
+	font-size: 12px;
+}
+div.footer1{
+	width: 230px;
+	height: 150px;
+	float: left;
+	margin-left: 30px;
+}
+div.footer2{
+	width: 250px;
+	height: 150px;
+	float: left;
+	margin-right: 20px;
+}
+div.footer3{
+	width: 250px;
+	height: 150px;
+	float: left;
+}
+div#footer ul li{
+	font-size: 14px;
+	margin-bottom: 10px;
+	list-style: none;
+	color: #ffffff;
+}
+/******************************************************/

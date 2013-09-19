@@ -1,0 +1,24 @@
+.wrapper * {margin:0; padding:0;}
+.clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.clearfix {zoom:1;}
+li.wrap-li {list-style:none;}
+#focus img {border:0;}
+
+.wrapper {width:600px; margin:0 auto; padding-bottom:50px;}
+.ad {width:468px; margin:10px auto 0;}
+.ad li {padding-top:5px;}
+
+.shuoming {margin-top:20px; border:1px solid #ccc; padding-bottom:10px;}
+.shuoming dt {height:30px; line-height:30px; font-weight:bold; text-indent:10px;}
+.shuoming dd {line-height:20px; padding:5px 20px;}
+
+.wrapper {width:850px;}
+/* tmall focus */
+#focus {width:850px; height:380px; overflow:hidden; position:relative;}
+#focus ul {height:380px; position:absolute;}
+li.wrap-li {float:left; width:850px; height:380px; overflow:hidden; position:relative; background:#000;}
+#focus ul li div {position:absolute; overflow:hidden;}
+#focus .btnBg {position:absolute; width:850px; height:40px; left:0; bottom:0; background:#000;}
+#focus .btn {position:absolute; width:840px; height:24px; left:0; bottom:8px; padding-left:10px;}
+#focus .btn span {display:inline-block; _display:inline; _zoom:1; width:24px; height:24px; line-height:24px; text-align:center; font-size:20px; font-family:"Microsoft YaHei",SimHei; margin-right:10px; cursor:pointer; color:#fff;}
+#focus .btn span.on {background:#000; color:#fcc;}

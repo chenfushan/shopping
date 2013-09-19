@@ -1,0 +1,102 @@
+body{
+	font: 12px Arial,sans-serif;
+	margin-top: 0;
+}
+div#page{
+	width: 850px;
+	height: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+div#header{
+	margin: 10px 0px 20px 0px;
+}
+
+div#content{
+	width: 850px;
+	height: 400px;
+}
+
+/*.loginform h1,
+.loginform span,
+.loginform input,
+.loginform label{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+}*/
+
+.loginform{
+	position: relative;
+	width: 200px;
+	height: 250px;
+	margin-top: 50px;
+	margin-right: 40px;
+	padding: 15px 15px 20px 25px;
+	cursor: default;
+	background-color: #bf7708;
+	float: right;
+
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 1px 1px 0px rgba(255,255,255, .2), inset 0px 1px 1px 0px rgb(0,0,0);
+	box-shadow: 0px 1px 1px 0px rgba(255,255,255, .2), inset 0px 1px 1px 0px rgb(0,0,0);
+}
+.loginform h1{
+	line-height: 40px;
+	font-family: 'Myriad Pro',sans-serif;
+	font-size: 22px;
+	font-weight: normal;
+	color: #e4e4e4;
+}
+.loginform input{
+	line-height: 16px;
+	margin: 10px 0;
+	padding: 6px 15px;
+	border: 0;
+	outline: none;
+
+	font-family: Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-shadow: 0px 1px 1px rgba(255,255,255, .2);
+
+	-webkit-border-radius: 26px;
+	border-radius: 26px;
+}
+span a#register{
+	margin: 10px;
+	font-size: 14px;
+}
+div#otherlogin{
+	color: #e4e4e4;
+	font-family: sans-serif;
+	font-size: 14px;
+	font-weight: 22px;
+}
+
+div#login-bg{
+	
+}
+
+div#footer{
+	margin-top: 150px;
+}
+
+div#footer ul li{
+	float: left;
+	margin: 0 10px;
+}
+
+/*===========================================*/
+
+div#Register_form h1{
+	line-height: 30px;
+}
+div#Register_form input{
+	line-height: 14px;
+	margin: 7px 0;
+}

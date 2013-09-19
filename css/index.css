@@ -1,0 +1,147 @@
+body{
+	font: 14px Arial,sans-serif;
+	margin-top: 0;
+}
+div#header{
+	height: 40px;
+}
+div#page{
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/******************************************************/
+div#top{
+	height: 120px;
+}
+div#logo{
+	width: 35%;
+	height: 106px;
+	float: left;
+}
+/******************************************************/
+div#search{
+	width: 65%;
+	height: 76px;
+	float: right;
+	padding-top: 30px;
+}
+div#search-panel{
+	width: 500px;
+	height: 68px;
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+}
+div#search-panel form{
+	float: right;
+}
+div#search-panel input[type = text]{
+	width: 350px;
+	height: 30px;
+	border-radius: 15px;
+	margin-right: 15px;
+}
+input#SearchItem{
+	width: 70px;
+	height: 35px;
+	border-radius: 10px;
+}
+/******************************************************/
+div#navigation{
+	padding-left: 0;
+	height: 40px;
+}
+div#navigation ul{
+	-webkit-padding-start:0;
+	margin-left: 0;
+	height: 30px;
+}
+div#navigation ul li{
+	list-style-type: none;
+	color: #ffffff;
+	float: left;
+	margin-right: 15px;
+}
+/******************************************************/
+div#category{
+	margin-bottom: 30px;
+}
+div#category1{
+	width: 400px;
+	height: 150px;
+	float: left;
+}
+div.category-detail{
+	width: 153px;
+	height: 153px;
+	float: left;
+}
+div.category-detail img{
+	width: 150px;
+	height: 150px;
+}
+div#section{
+	width: 400px;
+	height: 150px;
+}
+div#section ul{
+	width: 200px;
+	height: 150px;
+	float: left;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+div#category2{
+	width: 400px;
+	height: 150px;
+	float: right;
+}
+div#category12{
+	width: 850px;
+	height: 170px;
+}
+div#category3{
+	width: 400px;
+	height: 150px;
+	float: left;
+}
+div#category4{
+	width: 400px;
+	height: 150px;
+	float: right;
+}
+div#category34{
+	width: 850px;
+	height: 170px;
+}
+/******************************************************/
+div#footer{
+	width: 850px;
+	height: 170px;
+	margin-top: 80px;
+	font-size: 12px;
+}
+div.footer1{
+	width: 230px;
+	height: 150px;
+	float: left;
+	margin-left: 30px;
+}
+div.footer2{
+	width: 250px;
+	height: 150px;
+	float: left;
+	margin-right: 20px;
+}
+div.footer3{
+	width: 250px;
+	height: 150px;
+	float: left;
+}
+div#footer ul li{
+	margin-bottom: 10px;
+	list-style: none;
+	color: #ffffff;
+}
