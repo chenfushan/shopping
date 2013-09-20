@@ -8,11 +8,49 @@ div#page{
 	margin-right: auto;
 }
 /******************************************************/
+div#content{
+	width: 850px;
+	height: 420px;
+	margin-top: 50px;
+}
+/******************************************************/
 div#pic{
 	width: 400px;
 	height: 400px;
+	float: left;
 }
 div#pic img{
 	width: 400px;
 	height: 400px;
+}
+/******************************************************/
+div#info{
+	width: 400px;
+	height: 400px;
+	float: right;
+}
+div#name{
+	width: 400px;
+	height: 100px;
+}
+div#price{
+	width: 400px;
+	height: 100px;
+}
+div#num{
+	width: 400px;
+	height: 50px;
+}
+div#num{
+	width: 400px;
+	height: 200px;
+}
+div#num input[type=number]{
+	width: 70px;
+	height: 25px;
+}
+div#num input[type=submit]{
+	width: 100px;
+	height: 30px;
+	margin-top: 70px;
 }

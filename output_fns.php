@@ -286,4 +286,8 @@
 	 	</div>
 		<?php
 	}
+	function display_recommand($id)
+	{
+		
+	}
 ?>
