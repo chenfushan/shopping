@@ -54,3 +54,46 @@ div#num input[type=submit]{
 	height: 30px;
 	margin-top: 70px;
 }
+/******************************************************/
+div#tab-info{
+	float: right;
+	text-align: left;
+	width: 550px;
+	
+}
+div#tab-info ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 22px;
+	border-bottom: 1px solid darkgreen;
+}
+div#tab-info ul li{
+	float: left;
+	height: 17px;
+	padding: 4px 10px 0 10px;
+	margin-right: 5px;
+	border: 1px solid rgb(200,200,200);
+	border-bottom: none;
+	position: relative;
+	background: yellowgreen;
+	border-radius: 5px;
+}
+div#tab-info ul li.ui-tabs-active{
+	background: darkgreen;
+}
+div#tab-info ul li.ui-tabs-active a{
+	color: white;
+}
+div#tab1{
+	width: 550px;
+	background: lightblue;
+	padding: 5px;
+}
+div#tab2{
+	background: lightgreen;
+	padding: 5px;
+}
+.ui-tabs-hide{
+	display: none;
+}

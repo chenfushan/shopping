@@ -105,8 +105,22 @@
 		$result = db_result_to_array($result);
 		return $result;
 	}
+	function id_get_details($id)
+	{
+		$db = db_connect();
+		$query = "select id,name,price,info from item where id = '".$id."'";
+		$result = @$db->query($query);
+		if (!$result) {
+			return false;	
+		}
+		$item_detail = @$result->num_rows;
+		if ($item_detail == 0) {
+			return false;
+		}
+		$result = db_result_to_array($result);
+		return $result;
+	}
 
 /****************************************************************************/
-
 
  ?>

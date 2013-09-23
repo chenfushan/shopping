@@ -290,4 +290,13 @@
 	{
 		
 	}
+	function display_information($id)
+	{
+		
+	}
+	function display_appraise($id)
+	{
+		
+	}
+
 ?>
