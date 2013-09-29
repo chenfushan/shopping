@@ -120,6 +120,23 @@
 		$result = db_result_to_array($result);
 		return $result;
 	}
+	function id_get_message($id)
+	{
+		$db = db_connect();
+		$query = "select message from message where id = '".$id."'";
+		$result = @$db->query($query);
+		if(!$result)
+		{
+			return false;
+		}
+		$message = @$result->num_rows;
+		if($message == 0)
+		{
+			return false;
+		}
+		$result = db_result_to_array($result);
+		return $result;
+	}
 
 /****************************************************************************/
 

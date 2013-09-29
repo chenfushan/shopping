@@ -5,6 +5,8 @@
 		$id = $_GET['itemid'];
 		//echo $id;
 		$item_detail = id_get_details($id);
+		$item_array = array();
+		$message_array = id_get_message($id);
 	//	$appraise_array = appraise_get_array($id);
 	}
 
@@ -51,6 +53,7 @@
 					Please back and selected again!";
 				}else{
 					foreach ($item_detail as $row) {
+						$item_array = $row;
 			?>
 			<div id="item">
 				<div id="pic">
@@ -66,9 +69,12 @@
 							<span>$<?php echo $row['price']; ?></span>
 						</div>
 						<div id="num">
-							<form action="./order.php" method="post">
-								<input type="number" name="item-num" value="1" min="1"><br><input type="submit" value="Buy">
-							</form>
+							<?php 
+								echo "<form action=\"./order.php?itemid=".$id."\" method=\"post\">
+								<input type=\"number\" name=\"item-num\" value=\"1\" min=\"1\"><br>
+								<input type=\"submit\" value=\"Buy\">
+								</form>";
+							 ?>
 						</div>
 					</div>
 				</div>
@@ -90,9 +96,18 @@
 						<li class="tablist"><a href="#tab2"><span>Appraise</span></a></li>
 					</ul>
 					<div id="tab1">
-						<span>Introduction</span>
+						<span><?php echo $item_array['info']; ?></span>
 					</div>
 					<div id="tab2">
+						<?php 
+							if (!is_array($message_array)) {
+								echo "There is no Appraise for this item!";
+							}else{
+								foreach ($message_array as $row) {
+									echo "<span>".$row['message']."</span>";
+								}
+							}
+						 ?>
 						<span>Evaluate</span>
 					</div>
 				</div>
