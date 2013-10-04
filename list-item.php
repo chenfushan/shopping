@@ -17,6 +17,7 @@
 				$itemname = $_POST['SearchContent'];
 	//			echo $itemname;
 				$itemarray = search_get_itemarray($itemname);
+
 			}
 		}	
 	}	

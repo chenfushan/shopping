@@ -71,9 +71,9 @@
 						<div id="num">
 							<?php 
 								echo "<form action=\"./order.php?itemid=".$id."\" method=\"post\">
-								<input type=\"number\" name=\"item-num\" value=\"1\" min=\"1\"><br>
-								<input type=\"submit\" value=\"Buy\">
-								</form>";
+									<input type=\"number\" name=\"itemnum\" value=\"1\" min=\"1\"><br>
+									<input type=\"submit\" value=\"Buy\">
+									</form>";
 							 ?>
 						</div>
 					</div>
