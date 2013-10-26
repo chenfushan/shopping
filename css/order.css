@@ -83,37 +83,48 @@ div.in-addr{
 input[name="name"]{
 	border-radius: 5px;
 	width: 60px;
-	margin-left: 20px;
+	margin-left: 50px;
 }
 input[name="address"]{
 	border-radius: 5px;
 	width: 180px;
-	margin-left: 15px;
+	margin-left: 45px;
 }
 input[name="city"]{
 	border-radius: 5px;
 	width: 180px;
-	margin-left: 34px;
+	margin-left: 64px;
 }
 input[name="state"]{
 	border-radius: 5px;
 	width: 180px;
-	margin-left: 25px;
+	margin-left: 55px;
 }
 input[name="country"]{
 	border-radius: 5px;
 	width: 180px;
-	margin-left: 8px;
+	margin-left: 38px;
 }
 input[name="zip"]{
 	border-radius: 5px;
 	width: 180px;
-	margin-left: 38px;
+	margin-left: 68px;
+}
+input[name="phonenumber"]{
+	border-radius: 5px;
+	width: 180px;
+	margin-left: 0;
 }
 input[type="submit"]{
 	width: 80px;
 	height: 30px;
 	float: right;
+}
+input[type="button"]{
+	width: 80px;
+	height: 30px;
+	float: right;
+	border-radius: 5px;
 }
 /******************************************************/
 div#footer{

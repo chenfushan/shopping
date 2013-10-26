@@ -78,7 +78,7 @@
 					float: left;
 				}
 				ul#quickmenu{
-					width: 350px;
+					width: 390px;
 					height: 27px;
 					margin: 0;
 					padding-top: 4px;
@@ -98,9 +98,10 @@
 				<a href="./index.php"><?php echo $username ?></a>
 			</p>
 			<ul id="quickmenu">
-				<li><a href="#">category</a><b>|</b></li>
+				<li style="margin-right: 0; padding-right: 10px;"><a href="logout.php">logout</a></li>
+				<li><a href="#">category</a><b style="color:#ffffff">&nbsp&nbsp|</b></li>
 				<li><a href="#">order</a></li>
-				<li><a href="#cart">cart</a></li>
+				<li><a href="#">cart</a></li>
 				<li><a href="#">contact us</a></li>
 			</ul>
 		</div>
@@ -203,7 +204,7 @@
 	function display_item_list($itemarray)
 	{
 		if (!is_array($itemarray)) {
-			echo "<p>No books currently available in this list";
+			echo "<p>No item currently available in this list";
 		}else{
 			foreach ($itemarray as $row) {
 			?>

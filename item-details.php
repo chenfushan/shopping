@@ -114,7 +114,37 @@
 			</div>
 		</div>
 		<footer>
-			<div id="footer"></div>
+			<div id="footer">
+				<div id="footer">
+					<div class="footer1">
+						<ul class="website">
+							<h4 class="foot-title">Get To Know Us</h4>
+							<li><a href="#">Careers</a></li>
+							<li><a href="#">Investor Relations</a></li>
+							<li><a href="#">Our Planet</a></li>
+							<li><a href="#">Community</a></li>
+						</ul>
+					</div>
+					<div class="footer2">
+						<ul class="website">
+							<h4 class="foot-title">Make Money With Us</h4>
+							<li><a href="#">Sell on TianGou</a></li>
+							<li><a href="#">Advertise Your Products</a></li>
+							<li><a href="#">Become an Affiliate</a></li>
+							<li><a href="#">Independently Publish With Us</a></li>
+						</ul>
+					</div>
+					<div class="footer3">
+						<ul class="website">
+							<h4 class="foot-title">Let Us Help You</h4>
+							<li><a href="#">Your Account</a></li>
+							<li><a href="#">Payment & Refund</a></li>
+							<li><a href="#">Send & Delivery</a></li>
+							<li><a href="#">Help ...</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</footer>
 	</div>
 </body>

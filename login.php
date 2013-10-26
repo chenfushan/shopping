@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Login</title>
+	<script type="text/javascript" src="./js/login.js"></script>
 	<link rel="shortcut icon" href="./images/logo.ico">
 	<link rel="stylesheet" href="./css/login.css">
 </head>
@@ -17,8 +18,10 @@
 			<div id="TG_LoginForm" class="loginform">
 				<h1>Login Form</h1>
 				<form action="./login_result.php" method="post">
-					<input type="text" name="username" maxlength="14" placeholder="username" required>
-					<input type="password" name="password" maxlength="40" placeholder="password" required>
+					<input id="username" type="text" name="username" maxlength="14" placeholder="username" onblur="check_u()" required>
+					<div id="u_e"></div>
+					<input id="password" type="password" name="password" maxlength="40" placeholder="password" onblur="check_p()" required>
+					<div id="p_w"></div>
 					<input type="submit" value="Login">
 					<span><a id="register" href="./register.php">Register-free</a></span>
 					<hr>

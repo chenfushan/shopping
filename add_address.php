@@ -20,20 +20,15 @@
 		<?php
 		exit();
 	}
-	if (isset($_GET['itemid'])) {
-		$id = $_GET['itemid'];
-		$item_detail = id_get_details($id);
-	}
-	if (isset($_POST['itemnum'])) {
-		$num = $_POST['itemnum'];
-	}	
+
  ?>
-<!doctype html>
+ <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Order</title>
 	<link rel="stylesheet" href="./css/order.css">
+	<script src="./js/add_address.js"></script>
 </head>
 <body>
 	<div id="page">
@@ -57,72 +52,39 @@
 			<div class="arrow"><img src="./images/arrow.png" alt="arrow"></div>
 			<div class="process-text">Write your appraise</div>
 		</div>
-		<div id="order">
-			<div id="order-detail">
-				<div id="order-title">
-					<span id="item-name">item</span>
-					<span id="num">num</span>
-					<span id="total-price">total price</span>
-				</div>
-				<div id="order-info">
-					<?php 
-						foreach ($item_detail as $row) {
-							echo "<div id=\"item\">
-								<img src=\"./images/item-pic/".$id.".png\" alt=\"item pic\">
-								<a href=\"./item-details.php?itemid=".$id."\"><span>".$row['name']."</span></a>
-								</div>";
-							echo "<div id=\"num\">
-								<span>".$num."</span>
-								</div>";
-							$total_price = $num * $row['price'];
-							echo "<div id=\"total-price\">
-								<span>".$total_price."</span>
-								</div>";	
-						}
-						$order_id = insert_order($id,$username,$num,$total_price);
-				//		echo $order_id;
-					 ?>
-					
-					
-				</div>
-			</div>
-			<div id="address-select">
-				
-			</div>
+		<div id="order" style="margin-top: 30px">
 			<div id="address">
-				<form action="payment.php" method="post">
-					<?php echo "<input type=\"hidden\" name=\"order_id\" value=\"".$order_id."\">
-						<input type=\"hidden\" name=\"id\" value=\"".$id."\">
-						<input type=\"hidden\" name=\"total_price\" value=\"".$total_price."\">"; ?>
-					<div class="in-addr">
+				<form>
+					<?php echo "<input id=\"username\" type=\"hidden\" name=\"username\" value=\"".$username."\">"; ?>
+					<div class="in-addr" >
 						<span>Your Name:</span>
-						<input type="text" name="name" holdplace="" maxlength="60" required></div>
-					<div class="in-addr">
+						<input id="name" type="text" name="name" holdplace="" maxlength="60" required></div>
+					<div class="in-addr" >
 						<span>Your adress:</span>
-						<input type="text" name="address" holdplace="" maxlength="80" required>
+						<input id="detailaddress" type="text" name="address" holdplace="" maxlength="80" required>
 					</div>
-					<div class="in-addr">
+					<div class="in-addr" >
 						<span>Your City:</span>
-						<input type="text" name="city" holdplace="" maxlength="30" required>
+						<input id="city" type="text" name="city" holdplace="" maxlength="30" required>
 					</div>
-					<div class="in-addr">
+					<div class="in-addr" >
 						<span>Your State:</span>
-						<input type="text" name="state" holdplace="" maxlength="20" required>
+						<input id="state" type="text" name="state" holdplace="" maxlength="20" required>
 					</div>
 					<div class="in-addr">
 						<span>Your Country:</span>
-						<input type="text" name="country" holdplace="" maxlength="20" required>
+						<input id="country" type="text" name="country" holdplace="" maxlength="20" required>
 					</div>
 					<div class="in-addr">
 						<span>Your Zip:</span>
-						<input type="text" name="zip" holdplace="" maxlength="10" required>
+						<input id="zip" type="text" name="zip" holdplace="" maxlength="10" required>
 					</div>
 					<div class="in-addr">
 						<span>Your PhoneNumber:</span>
-						<input type="text" name="phonenumber" holdplace="" maxlength="20" required>
+						<input id="phonenumber" type="text" name="phonenumber" holdplace="" maxlength="20" required>
 					</div>
 					<div class="in-addr">
-						<input type="submit" value="Payment">
+						<input type="button" onclick="add()" value="Add">
 					</div>					
 				</form>
 			</div>
@@ -152,8 +114,8 @@
 						<ul class="website">
 							<h4 class="foot-title">Let Us Help You</h4>
 							<li><a href="#">Your Account</a></li>
-							<li><a href="#">Payment & Refund</a></li>
-							<li><a href="#">Send & Delivery</a></li>
+							<li><a href="#">Payment &amp; Refund</a></li>
+							<li><a href="#">Send &amp; Delivery</a></li>
 							<li><a href="#">Help ...</a></li>
 						</ul>
 					</div>

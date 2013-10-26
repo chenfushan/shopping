@@ -55,6 +55,11 @@ div#num input[type=submit]{
 	margin-top: 70px;
 }
 /******************************************************/
+div#introduce{
+	width: 550px;
+	height: 500px;
+	float: left;
+}
 div#tab-info{
 	float: right;
 	text-align: left;
@@ -89,6 +94,7 @@ div#tab1{
 	width: 550px;
 	background: lightblue;
 	padding: 5px;
+	line-height: 30px;
 }
 div#tab2{
 	background: lightgreen;
@@ -97,3 +103,39 @@ div#tab2{
 .ui-tabs-hide{
 	display: none;
 }
+div#shop-nav{
+	width: 280px;
+	height: 500px;
+	float: left;
+}
+/******************************************************/
+div#footer{
+	width: 850px;
+	height: 170px;
+	margin-top: 80px;
+	font-size: 12px;
+}
+div.footer1{
+	width: 230px;
+	height: 150px;
+	float: left;
+	margin-left: 30px;
+}
+div.footer2{
+	width: 250px;
+	height: 150px;
+	float: left;
+	margin-right: 20px;
+}
+div.footer3{
+	width: 250px;
+	height: 150px;
+	float: left;
+}
+div#footer ul li{
+	font-size: 14px;
+	margin-bottom: 10px;
+	list-style: none;
+	color: #ffffff;
+}
+/******************************************************/
