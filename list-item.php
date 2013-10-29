@@ -15,8 +15,9 @@
 			if(isset($_POST['SearchContent']))
 			{
 				$itemname = $_POST['SearchContent'];
-	//			echo $itemname;
+		//		echo $itemname;
 				$itemarray = search_get_itemarray($itemname);
+
 			}
 		}	
 	}	
@@ -26,6 +27,7 @@
  <head>
  	<meta charset="UTF-8">
  	<title>Tian-Gou</title>
+ 	<link rel="shortcut icon" href="./images/logo.ico">
  	<link rel="stylesheet" href="./css/list-item.css">
  </head>
  <body>
@@ -57,18 +59,18 @@
 	 		<div id="cg-list">
 	 			<div class="cgt">
 					<ul>
-						<h4>Electronics & computer</h4>
-						<li><a href="./list-item.php?cgtid=1">TV & video</a></li>
+						<h4>Electronics &amp; computer</h4>
+						<li><a href="./list-item.php?cgtid=1">TV &amp; video</a></li>
 						<li><a href="./list-item.php?cgtid=2">Home Audio</a></li>
 						<li><a href="./list-item.php?cgtid=3">camera photo</a></li>
 						<li><a href="./list-item.php?cgtid=4">video games</a></li>
 						<li><a href="./list-item.php?cgtid=5">MP3 player</a></li>
-						<li><a href="./list-item.php?cgtid=6">laptop & Tablets</a></li>
+						<li><a href="./list-item.php?cgtid=6">laptop &amp; Tablets</a></li>
 					</ul>
  				</div>
 	 			<div class="cgt">
 					<ul>
-						<h4>Books & Audio</h4>
+						<h4>Books &amp; Audio</h4>
 						<li><a href="./list-item.php?cgtid=7">Children Books</a></li>
 						<li><a href="./list-item.php?cgtid=8">Textbooks</a></li>
 						<li><a href="./list-item.php?cgtid=9">Magazine</a></li>
@@ -79,7 +81,7 @@
 	 			</div>
 	 			<div class="cgt">
 	 				<ul>
-						<h4>Toy & Baby</h4>
+						<h4>Toy &amp; Baby</h4>
 						<li><a href="./list-item.php?cgtid=13">Toys Games</a></li>
 						<li><a href="./list-item.php?cgtid=14">Babys' clothing</a></li>
 						<li><a href="./list-item.php?cgtid=15">video games for kids</a></li>
@@ -130,8 +132,8 @@
 				<ul class="website">
 					<h4 class="foot-title">Let Us Help You</h4>
 					<li><a href="#">Your Account</a></li>
-					<li><a href="#">Payment & Refund</a></li>
-					<li><a href="#">Send & Delivery</a></li>
+					<li><a href="#">Payment &amp; Refund</a></li>
+					<li><a href="#">Send &amp; Delivery</a></li>
 					<li><a href="#">Help ...</a></li>
 				</ul>
 			</div>

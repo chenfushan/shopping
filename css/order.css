@@ -1,3 +1,175 @@
 body{
-	font:14px sans-serif;
+	font:14px Arial,sans-serif;
+	margin-top: 0;
+}
+
+div#page{
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/******************************************************/
+div#process{
+	height: 120px;
+}
+div.process-text{
+	float: left;
+	margin-top: 40px;
+	font-family: monospace;
+	font-size: 18px;
+	color: #e9a63b;
+	width: 120px;
+	height: 50px;
+	border: 3px solid rgb(100,100,100);
+	text-align: center;
+}
+div.arrow{
+	width: 100px;
+	height: 50px;
+	float: left;
+	margin-top: 40px;
+}
+div.arrow img{
+	width: 100px;
+	height: 50px;
+}
+/******************************************************/
+div#order-detail{
+	height: 100px;
+	padding-top: 30px;
+	padding-left: 15px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border: 3px solid;
+}
+div#order-title{
+	height: 30px;
+	font-weight: bold;
+	color: red;
+}
+span#item-name, span#num{
+	margin-right: 300px;
+}
+div#order-info{
+	height: 60px;
+}
+div#item, div#num, div#total-price{
+	float: left;
+	height: 55px;
+	width: 280px;
+}
+div#item {
+	margin-right: 49px;
+}
+div#item img{
+	width: 50px;
+	height: 50px;
+}
+div#item span{
+	vertical-align: top;
+}
+div#num {
+	width: 40px;
+	margin-right: 290px;
+	text-align: center;
+}
+div#total-price{
+	width: 80px;
+	text-align: center;
+}
+div.in-addr{
+	height: 40px;
+}
+input[name="name"]{
+	border-radius: 5px;
+	width: 60px;
+	margin-left: 50px;
+}
+input[name="address"]{
+	border-radius: 5px;
+	width: 180px;
+	margin-left: 45px;
+}
+input[name="city"]{
+	border-radius: 5px;
+	width: 180px;
+	margin-left: 64px;
+}
+input[name="state"]{
+	border-radius: 5px;
+	width: 180px;
+	margin-left: 55px;
+}
+input[name="country"]{
+	border-radius: 5px;
+	width: 180px;
+	margin-left: 38px;
+}
+input[name="zip"]{
+	border-radius: 5px;
+	width: 180px;
+	margin-left: 68px;
+}
+input[name="phonenumber"]{
+	border-radius: 5px;
+	width: 180px;
+	margin-left: 0;
+}
+input[type="submit"]{
+	width: 80px;
+	height: 30px;
+	float: right;
+}
+input[type="button"]{
+	width: 80px;
+	height: 30px;
+	float: right;
+	border-radius: 5px;
+}
+/******************************************************/
+div#address-select{
+	height: 350px;
+	margin-bottom: 80px;
+}
+div.add{
+	width: 425px;
+	height: 100px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: left;
+}
+div.add_detail{
+	width: 350px;
+	padding: 5px;
+	border: 3px solid rgb(100,100,100);
+}
+/******************************************************/
+div#footer{
+	width: 850px;
+	height: 170px;
+	margin-top: 80px;
+	font-size: 12px;
+}
+div.footer1{
+	width: 230px;
+	height: 150px;
+	float: left;
+	margin-left: 30px;
+}
+div.footer2{
+	width: 250px;
+	height: 150px;
+	float: left;
+	margin-right: 20px;
+}
+div.footer3{
+	width: 250px;
+	height: 150px;
+	float: left;
+}
+div#footer ul li{
+	font-size: 14px;
+	margin-bottom: 10px;
+	list-style: none;
+	color: #ffffff;
 }
