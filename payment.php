@@ -2,15 +2,17 @@
 	require_once 'include.php';
 	session_start();
 	$order_id = $_POST['order_id'];
-	$id = $_POST['id'];
-	$name = $_POST['name'];
-	$address = $_POST['address'];
-	$city = $_POST['city'];
-	$state = $_POST['state'];
-	$country = $_POST['country'];
-	$zip = $_POST['zip'];
+	$addressid = $_POST['add'];
 	$total_price = $_POST['total_price'];
-	$phonenumber = $_POST['phonenumber'];
+	// $id = $_POST['id'];
+	// $name = $_POST['name'];
+	// $address = $_POST['address'];
+	// $city = $_POST['city'];
+	// $state = $_POST['state'];
+	// $country = $_POST['country'];
+	// $zip = $_POST['zip'];
+	
+	// $phonenumber = $_POST['phonenumber'];
 	if(isset($_SESSION['username']))
 	{
 		$username = $_SESSION['username'];
@@ -21,6 +23,7 @@
 		<head>
 			<meta charset="UTF-8">
 			<title>Please Login</title>
+			<link rel="shortcut icon" href="./images/logo.ico">
 			<meta http-equiv="refresh" content="1; url=login.php">
 		</head>
 		<body>
@@ -38,6 +41,12 @@
 	<title>Order</title>
 	<link rel="stylesheet" href="./css/order.css">
 	<link rel="stylesheet" href="./css/payment.css">
+	<link rel="shortcut icon" href="./images/logo.ico">
+	<script>
+		function notif () {
+			alert("Pay Successfully ! Please Wait ...");
+		}
+	</script>
 </head>
 <body>
 	<div id="page">
@@ -65,13 +74,15 @@
 			<?php 
 				$pay = payment($total_price);
 				if ($pay) {
-					insert_address($order_id,$name,$address,$city,$state,$country,$zip,$phonenumber);
+					insert_address($order_id,$addressid);
 					update_orderid($order_id);
-					echo "You have been paid! Wait for your mail!";
+					echo "Order Have Been Saved ! Please Pay For Order !";
 				}else{
-					echo "pay error! please repay!";
+					echo "Order error! Please Retry!";
 				}
 			 ?>
+			 <br>
+			 <input type="button" value="Pay" onclick="notif()" />
 			 <div id="back_homepage">
 			 	<a href="./index.php">Back HomePage>></a>
 			 </div>

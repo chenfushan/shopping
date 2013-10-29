@@ -174,17 +174,18 @@ function payment($total_price)
 {
 	return true;
 }
-function insert_address($order_id,$name,$address,$city,$state,$country,$zip,$phonenumber)
+function insert_address($order_id,$addressid)
 {
 	$db = db_connect();
-	$name = addslashes($name);
+//	$name = addslashes($name);
 //	echo "--".$city."--";
-	$address = addslashes($address);
-	$city = addslashes($city);
-	$state = addslashes($state);
-	$country = addslashes($country);
+	// $address = addslashes($address);
+	// $city = addslashes($city);
+	// $state = addslashes($state);
+	// $country = addslashes($country);
 //	echo $order_id.$name.$address.$city.$state.$country.$zip;
-	$query = "insert into address values('".$order_id."','".$name."','".$address."','".$city."','".$state."','".$country."','".$zip."','".$phonenumber."');";              
+//	$query = "insert into address values('".$order_id."','".$name."','".$address."','".$city."','".$state."','".$country."','".$zip."','".$phonenumber."');"; 
+	$query = "insert into address select '".$order_id."' as 'orderid',ship_name,ship_address,ship_city,ship_state,ship_country,ship_zip,ship_phonenumber from address_select where addressid = ".$addressid.";";             
 //	echo "--".$query."--";
 	$result = $db->query($query);
 	if (!$result) {
@@ -209,6 +210,10 @@ function update_orderid($order_id)
 function insert_address_select($username,$name,$address,$city,$state,$country,$zip,$phonenumber)
 {
 	$db = db_connect();
+	$address = addslashes($address);
+	$city = addslashes($city);
+	$state = addslashes($state);
+	$country = addslashes($country);
 	$result = $db->query("insert into address_select values ('','".$username."','".$name."',
 		'".$address."','".$city."','".$state."','".$country."','".$zip."','".$phonenumber."');");
 	if (!$result) {
@@ -216,5 +221,21 @@ function insert_address_select($username,$name,$address,$city,$state,$country,$z
 	}else{
 		return true;
 	}
+}
+
+function get_address($username)
+{
+	$db = db_connect();
+	$query = "select addressid,ship_name,ship_country,ship_state,ship_city,ship_address,ship_zip,ship_phonenumber from address_select where username = '".$username."'";
+	$result = $db->query($query);
+	if (!$result) {
+		return false;
+	}
+	$num = $result->num_rows;
+	if ($num < 1) {
+		return false;
+	}
+	$result = db_result_to_array($result);
+	return $result;
 }
  ?>

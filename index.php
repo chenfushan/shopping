@@ -9,6 +9,7 @@
 <title>Tian-Gou</title>
 <link rel="stylesheet" href="./css/wrap.css" />
 <link rel="stylesheet" href="./css/index.css">
+<link rel="shortcut icon" href="./images/logo.ico">
 <script type="text/javascript" src="./js/jquery.min.js"></script>
 <script type="text/javascript">
 $(function() {

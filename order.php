@@ -11,6 +11,7 @@
 		<head>
 			<meta charset="UTF-8">
 			<title>Please Login</title>
+			<link rel="shortcut icon" href="./images/logo.ico">
 			<meta http-equiv="refresh" content="1; url=login.php">
 		</head>
 		<body>
@@ -33,6 +34,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Order</title>
+	<link rel="shortcut icon" href="./images/logo.ico">
 	<link rel="stylesheet" href="./css/order.css">
 </head>
 <body>
@@ -87,14 +89,34 @@
 				</div>
 			</div>
 			<div id="address-select">
+				<form action="payment.php" method="post">
+				<?php 
+			//	echo $username;
+					$result = get_address($username);
+					if ($result == false) {
+						?>
+						<a href="add_address.php">Add a new Address</a>
+						<?php
+					}else{
+						display_address($result);
+						echo "<input type=\"hidden\" name=\"order_id\" value=\"".$order_id."\">
+					 	<input type=\"hidden\" name=\"id\" value=\"".$id."\">
+					 	<input type=\"hidden\" name=\"total_price\" value=\"".$total_price."\">
+					 	<input type=\"submit\" value=\"Confirm\">"; 
+					}
+				 ?>
+
+				</form>
 				
 			</div>
 			<div id="address">
 				<form action="payment.php" method="post">
-					<?php echo "<input type=\"hidden\" name=\"order_id\" value=\"".$order_id."\">
-						<input type=\"hidden\" name=\"id\" value=\"".$id."\">
-						<input type=\"hidden\" name=\"total_price\" value=\"".$total_price."\">"; ?>
-					<div class="in-addr">
+					<?php 
+					// echo "<input type=\"hidden\" name=\"order_id\" value=\"".$order_id."\">
+					// 	<input type=\"hidden\" name=\"id\" value=\"".$id."\">
+					// 	<input type=\"hidden\" name=\"total_price\" value=\"".$total_price."\">"; 
+						?>
+					<!-- <div class="in-addr">
 						<span>Your Name:</span>
 						<input type="text" name="name" holdplace="" maxlength="60" required></div>
 					<div class="in-addr">
@@ -120,10 +142,11 @@
 					<div class="in-addr">
 						<span>Your PhoneNumber:</span>
 						<input type="text" name="phonenumber" holdplace="" maxlength="20" required>
-					</div>
+					</div> 
 					<div class="in-addr">
 						<input type="submit" value="Payment">
-					</div>					
+					</div>	
+					-->				
 				</form>
 			</div>
 		</div>

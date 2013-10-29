@@ -18,6 +18,7 @@
 	<title>Item</title>
 	<script src="./js/jquery.js"></script>
 	<script src="./jqueryui/js/jqueryui.js"></script>
+	<link rel="shortcut icon" href="./images/logo.ico">
 	<link rel="stylesheet" href="./css/item-details.css">
 	<script>
 		$(document).ready(function() {

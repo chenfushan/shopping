@@ -54,8 +54,8 @@
 		</div>
 		<div id="order" style="margin-top: 30px">
 			<div id="address">
+				<div id="result"></div>
 				<form>
-					<?php echo "<input id=\"username\" type=\"hidden\" name=\"username\" value=\"".$username."\">"; ?>
 					<div class="in-addr" >
 						<span>Your Name:</span>
 						<input id="name" type="text" name="name" holdplace="" maxlength="60" required></div>

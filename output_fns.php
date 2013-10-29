@@ -300,4 +300,21 @@
 		
 	}
 
+	function display_address($result)
+	{
+		if (!$result) {
+			echo "Address error ! can't load .. Please refresh!";
+		}else{
+			foreach ($result as $row) {
+				?>
+				<div class="add">
+					<?php 
+						echo "<input type=\"radio\" name=\"add\" value=\"".$row['addressid']."\"><div class=\"add_detail\">name: ".$row['ship_name']."<br />address: ".$row['ship_country']."-".$row['ship_state']."-".$row['ship_city']."-".$row['ship_address']."<br />zip: ".$row['ship_zip']."<br />phone: ".$row['ship_phonenumber']."</div>";
+					 ?>
+				</div>
+				<?php
+			}
+		}
+	}
+
 ?>

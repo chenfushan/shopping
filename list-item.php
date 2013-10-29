@@ -27,6 +27,7 @@
  <head>
  	<meta charset="UTF-8">
  	<title>Tian-Gou</title>
+ 	<link rel="shortcut icon" href="./images/logo.ico">
  	<link rel="stylesheet" href="./css/list-item.css">
  </head>
  <body>
