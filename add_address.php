@@ -12,6 +12,7 @@
 			<meta charset="UTF-8">
 			<title>Please Login</title>
 			<meta http-equiv="refresh" content="1; url=login.php">
+			<link rel="shortcut icon" href="./images/logo.ico">
 		</head>
 		<body>
 			<p>Please Login First</p>
@@ -28,6 +29,7 @@
 	<meta charset="UTF-8">
 	<title>Order</title>
 	<link rel="stylesheet" href="./css/order.css">
+	<link rel="shortcut icon" href="./images/logo.ico">
 	<script src="./js/add_address.js"></script>
 </head>
 <body>

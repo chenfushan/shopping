@@ -18,18 +18,9 @@
 	<title>Item</title>
 	<script src="./js/jquery.js"></script>
 	<script src="./jqueryui/js/jqueryui.js"></script>
+	<script type="text/javascript" src="./js/addshoppingcart.js"></script>
 	<link rel="shortcut icon" href="./images/logo.ico">
 	<link rel="stylesheet" href="./css/item-details.css">
-	<script>
-		$(document).ready(function() {
-			$('div#tab-info').tabs({
-				fx:{
-					opacity:'toggle',
-					duration:'slow'
-				}
-			});
-		});
-	</script>
 	<link rel="stylesheet" href="./css/item-details.css">
 </head>
 <body>
@@ -67,12 +58,13 @@
 							<span><?php echo $row['name']; ?></span>
 						</div>
 						<div id="price">
-							<span>$<?php echo $row['price']; ?></span>
+							PRICE:&nbsp;&nbsp;$<span><?php echo $row['price']; ?></span>
 						</div>
 						<div id="num">
 							<?php 
 								echo "<form action=\"./order.php?itemid=".$id."\" method=\"post\">
-									<input type=\"number\" name=\"itemnum\" value=\"1\" min=\"1\"><br>
+									<input type=\"number\" id=\"number\" name=\"itemnum\" value=\"1\" min=\"1\"><br>
+									<input type=\"button\" value=\"Add to cart\" />
 									<input type=\"submit\" value=\"Buy\">
 									</form>";
 							 ?>
@@ -87,7 +79,10 @@
 		</div>
 		<div id="details">
 			<div id="shop-nav">
-				<?php display_recommand($id); ?>
+				<span>Mybe You Will Like..</span>
+				<div id="nav-list">
+					<?php display_recommend($id); ?>
+				</div>
 			</div>
 			<div id="introduce">
 				<div id="tab-info">

@@ -138,6 +138,19 @@
 		$result = db_result_to_array($result);
 		return $result;
 	}
+	function get_cgtid_id($id)
+	{
+		$db = db_connect();
+		$result = $db->query("select cgt_id from item where id = '".$id."';");
+		if (!$result) {
+			echo "execute select cgtid error!!";
+		}
+		$result = db_result_to_array($result);
+		foreach ($result as $row) {
+			$cgtid = $row['cgt_id'];
+		}
+		return $cgtid;
+	}
 	function id_get_message($id)
 	{
 		$db = db_connect();
@@ -154,6 +167,18 @@
 		}
 		$result = db_result_to_array($result);
 		return $result;
+	}
+	function insert_shoppingcart($username,$itemid,$num)
+	{
+		$db = db_connect();
+		$query = "insert into shoppingcart values('".$username."',".$itemid.",".$num.");";
+		$result = $db->query($query);
+		if (!$result) {
+			return false;
+		}else{
+			return true;
+		}
+		return true;
 	}
 
 /****************************************************************************/

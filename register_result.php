@@ -17,9 +17,23 @@
 			throw new Exception("password must more than six characters");
 			
 		}
-		register($username,$email,$password);
+		register($username,$password,$email);
 		$_SESSION['username'] = $username;
-		show_html_start();
+		?>
+		<!doctype html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Document</title>
+			<meta http-equiv="refresh" content="1; url=index.php">
+			<style>
+				body{
+					margin-top: 0;
+				}
+			</style>
+		</head>
+		<body>
+		<?php
 		show_header($username);
 		show_logo();
 		show_message("Your register is successful, Go to the index page to buy.");

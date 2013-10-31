@@ -1,4 +1,5 @@
 <?php 
+	require_once 'include.php';
 	function show_header($username='')
 	{
 		if ($username =='') {
@@ -287,9 +288,43 @@
 	 	</div>
 		<?php
 	}
-	function display_recommand($id)
+	function display_recommend($id)
 	{
-		
+		$cgtid = get_cgtid_id($id);
+		$itemarray = array();
+		$itemarray = cgt_get_itemarray($cgtid);
+		foreach ($itemarray as $row) {
+			?>
+			<style>
+				div.nav-item-list-img{
+					margin-top: 15px;
+				}
+				div.nav-item-list-img img{
+					width: 70px;
+					height: 70px;
+					float: left;
+					margin-right: 5px;
+				}
+				div.nav-item-list-detail{
+					text-align: left;
+				}
+			</style>
+			<div class="nav-item-list">
+				<div class="nav-item-list-img">
+					<?php echo "<img src=\"./images/item-pic/".$row['id'].".png\" alt=\"Laptop\">"; ?>
+				</div>
+				<div class="nav-item-list-detail">
+					<?php 
+ 						echo "<a href=\"./item-details.php?itemid=".$row['id']."\">
+ 							<span>".$row['name']."</span>
+ 							</a>";
+ 					 ?>
+ 					 <br>
+ 					 <span>$<?php echo $row['price']; ?></span>
+				</div>
+			</div>
+			<?php
+		}
 	}
 	function display_information($id)
 	{
