@@ -95,14 +95,23 @@
 					$result = get_address($username);
 					if ($result == false) {
 						?>
-						<a href="add_address.php">Add a new Address</a>
+						<a href="add_address.php" target="view_window">Add a new Address</a>
 						<?php
 					}else{
+						echo "<div>";
 						display_address($result);
+						?>
+						<div class="add">
+							<div id="a" style="margin-top:30px;">
+								<a href="add_address.php" target="view_window">Add a new Address</a>
+							</div>
+						</div>
+						</div>
+						<?php
 						echo "<input type=\"hidden\" name=\"order_id\" value=\"".$order_id."\">
 					 	<input type=\"hidden\" name=\"id\" value=\"".$id."\">
 					 	<input type=\"hidden\" name=\"total_price\" value=\"".$total_price."\">
-					 	<input type=\"submit\" value=\"Confirm\">"; 
+					 	<div id=\"confirm\"><input type=\"submit\" value=\"Confirm\"></div>"; 
 					}
 				 ?>
 
