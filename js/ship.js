@@ -1,8 +1,8 @@
 $(document).ready(function() {
-	$('input#pay_button').click(
+	$('input#ship_button').click(
 		function() {
-			var orderid = parseInt($('input#order_id').val());
-//			alert(orderid);
+			var orderid = parseInt($('input#orderid').val());
+	//		alert(orderid);
 			var xmlhttp;
 			if (window.XMLHttpRequest) {
 				xmlhttp = new XMLHttpRequest();
@@ -10,20 +10,21 @@ $(document).ready(function() {
 				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 			}
 			var url = "orderid="+encodeURIComponent(orderid);
-			xmlhttp.open("POST","paymentresult.php",true);
+			xmlhttp.open("POST","ShipResult.php",true);
 			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded;");
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					var pay_info = xmlhttp.responseText;
-					if (pay_info == "true") {
-						alert("Pay Successfully ! Please Wait ...");
-						location.href = "show_order.php";
+					var ship_info = xmlhttp.responseText;
+				//	alert(ship_info);
+					if (ship_info = "true") {
+						alert("Ship successfully ! Wait for completion of orders !");
+						location.href = "unshiporder.php";
 					}else{
-						alert(pay_info);
+						alert(ship_info);
 					}
 				}
 			}
 			xmlhttp.send(url);
 		}
-		)
-});	
+	)
+});

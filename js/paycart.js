@@ -1,29 +1,33 @@
 $(document).ready(function() {
+	var addnum = parseInt($('input#addnum').val());
+	if (addnum % 2 == 0) {
+		addnum = (addnum/2)*100+200;
+	}else{
+		addnum = ((addnum+1)/2)*100+200;
+	}
+	$('div#address-select').css("height",addnum);
+
 	$('input#pay_button').click(
 		function() {
-			var orderid = parseInt($('input#order_id').val());
-//			alert(orderid);
 			var xmlhttp;
 			if (window.XMLHttpRequest) {
 				xmlhttp = new XMLHttpRequest();
-			}else{
+			} else{
 				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 			}
-			var url = "orderid="+encodeURIComponent(orderid);
-			xmlhttp.open("POST","paymentresult.php",true);
+			xmlhttp.open("POST","paycartresult.php",true);
 			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded;");
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					var pay_info = xmlhttp.responseText;
-					if (pay_info == "true") {
-						alert("Pay Successfully ! Please Wait ...");
-						location.href = "show_order.php";
+					var add_info = xmlhttp.responseText;
+					if (add_info == "true") {
+						alert("Pay successfully ! Please wait ...");
 					}else{
-						alert(pay_info);
+						alert(add_info);
 					}
 				}
 			}
-			xmlhttp.send(url);
+			xmlhttp.send(null);
 		}
-		)
-});	
+		)	
+});

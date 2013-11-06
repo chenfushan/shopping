@@ -1,0 +1,70 @@
+body{
+	margin-top: 0;
+}
+div#page{
+	margin-left: auto;
+	margin-right: auto;
+	width: 850px;
+}
+/******************************************************/
+div#order-detail{
+	height: 100px;
+	padding-top: 30px;
+	padding-left: 15px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border: 3px solid;
+}
+div#order-title{
+	height: 30px;
+	font-weight: bold;
+	color: red;
+}
+span#item-name, span#num{
+	margin-right: 300px;
+}
+div#order-info{
+	height: 60px;
+}
+div#item, div#num, div#total-price{
+	float: left;
+	height: 55px;
+	width: 280px;
+}
+div#item {
+	margin-right: 49px;
+}
+div#item img{
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+div#item span{
+	vertical-align: top;
+}
+div#num {
+	width: 40px;
+	margin-right: 290px;
+	text-align: center;
+}
+div#total-price{
+	width: 80px;
+	text-align: center;
+}
+div.in-addr{
+	height: 40px;
+}
+div#pay{
+	height: 50px;
+}
+input#pay_button{
+	width: 120px;
+	height: 40px;
+	float: right;
+	border-radius: 5px;
+	background-color: #1E90FF;
+}
+/******************************************************/
+footer{
+	margin-top: 50px;
+}

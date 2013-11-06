@@ -1,0 +1,51 @@
+body{
+	margin-top: 0;
+}
+div#page{
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+}
+div#header{
+	height: 20px;
+	font-size: 16px;
+	padding: 15px;
+	margin-bottom: 30px;
+	background-color: #e9a63b;
+}
+div#adminName{
+	width: 300px;
+	float: left;
+}
+div#menu{
+	width: 400px;
+	float: right;
+	text-align: right;
+}
+div#menu a{
+	margin-left: 15px;
+}
+/**************************************************************/
+div#admin-menu{
+	height: 480px;
+	padding-top: 20px;
+}
+ul.menu-list li{
+	margin-top: 5px;
+}
+
+/**************************************************************/
+ul#foot{
+	list-style: none;
+	-webkit-padding-start: 0;
+}
+ul#foot li{
+	float: left;
+	margin-right: 20px;
+}
+ul#foot li a{
+	text-decoration: none;
+}
+ul#foot span{
+	float: right;
+}

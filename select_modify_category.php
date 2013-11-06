@@ -1,6 +1,25 @@
 <?php 
 	require_once 'include.php';
 	session_start();
+	if (isset($_SESSION['admin'])) {
+		$admin = $_SESSION['admin'];
+	}else{
+		?>
+		<!doctype html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Please Login</title>
+			<link rel="shortcut icon" href="./images/logo.ico">
+			<meta http-equiv="refresh" content="1; url=admin_login.php">
+		</head>
+		<body>
+			<p>Please Login First</p>
+		</body>
+		</html>
+		<?php
+		exit();
+	}
  ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -75,21 +94,20 @@ $(function() {
 
 <body>
 	<div id="page">
-		<div id="header">
  			<?php
- 			if (isset($_SESSION['username'])) {
- 			show_header($_SESSION['username']);
-	 		}else{
-	 			show_header();
-	 		} ?>
- 		</div>
+ 			// if (isset($_SESSION['username'])) {
+ 			// show_header($_SESSION['username']);
+	 		// }else{
+	 		// 	show_header();
+	 		// } ?>
+	 		<?php admin_show_header(); ?>
  		<div id="top">
  			<div id="logo">
- 				<h1 id="banner"><a href="./index.php"><img src="./images/Banner.png" alt="TianGou -- Shopping" id="banner"></a></h1>
+ 				<h1 id="banner"><a href="./admin.php"><img src="./images/Banner.png" alt="TianGou -- Shopping" id="banner"></a></h1>
  			</div>
 	 		<div id="search">
 	 			<div id="search-panel">
-	 				<form action="./list-item.php" method="post">
+	 				<form action="./list_modify_item.php" method="post">
 	 					<input type="text" name="SearchContent" maxlength="120" placeholder="Search: Computer? "><input type="submit" value="Search" id="SearchItem">
 	 				</form>
 	 			</div>	
@@ -97,10 +115,10 @@ $(function() {
  		</div>		
  		<div id="navigation">
  				<ul class="category">
- 					<li class="category1"><a href="./list-item.php?cgoid=1">Electronics & computer</a></li>
- 					<li class="category2"><a href="./list-item.php?cgoid=2">Books & Audio</a></li>
- 					<li class="category3"><a href="./list-item.php?cgoid=3">Toy & Baby</a></li>
- 					<li class="category4"><a href="./list-item.php?cgoid=4">Clothing</a></li>
+ 					<li class="category1"><a href="./list_modify_item.php?cgoid=1">Electronics & computer</a></li>
+ 					<li class="category2"><a href="./list_modify_item.php?cgoid=2">Books & Audio</a></li>
+ 					<li class="category3"><a href="./list_modify_item.php?cgoid=3">Toy & Baby</a></li>
+ 					<li class="category4"><a href="./list_modify_item.php?cgoid=4">Clothing</a></li>
  				</ul>
  		</div>
 		<div class="wrapper">
@@ -147,12 +165,12 @@ $(function() {
 						</div>
 					<ul>
 						<h4>Electronics & computer</h4>
-						<li><a href="./list-item.php?cgtid=1">TV & video</a></li>
-						<li><a href="./list-item.php?cgtid=2">Home Audio</a></li>
-						<li><a href="./list-item.php?cgtid=3">camera photo</a></li>
-						<li><a href="./list-item.php?cgtid=4">video games</a></li>
-						<li><a href="./list-item.php?cgtid=5">MP3 player</a></li>
-						<li><a href="./list-item.php?cgtid=6">laptop & Tablets</a></li>
+						<li><a href="./list_modify_item.php?cgtid=1">TV & video</a></li>
+						<li><a href="./list_modify_item.php?cgtid=2">Home Audio</a></li>
+						<li><a href="./list_modify_item.php?cgtid=3">camera photo</a></li>
+						<li><a href="./list_modify_item.php?cgtid=4">video games</a></li>
+						<li><a href="./list_modify_item.php?cgtid=5">MP3 player</a></li>
+						<li><a href="./list_modify_item.php?cgtid=6">laptop & Tablets</a></li>
 					</ul>
 					</div>
 				</div>
@@ -163,12 +181,12 @@ $(function() {
 						</div>
 					<ul>
 						<h4>Books & Audio</h4>
-						<li><a href="./list-item.php?cgtid=7">Children Books</a></li>
-						<li><a href="./list-item.php?cgtid=8">Textbooks</a></li>
-						<li><a href="./list-item.php?cgtid=9">Magazine</a></li>
-						<li><a href="./list-item.php?cgtid=10">whisper for voice</a></li>
-						<li><a href="./list-item.php?cgtid=11">audio books</a></li>
-						<li><a href="./list-item.php?cgtid=12">Software books</a></li>
+						<li><a href="./list_modify_item.php?cgtid=7">Children Books</a></li>
+						<li><a href="./list_modify_item.php?cgtid=8">Textbooks</a></li>
+						<li><a href="./list_modify_item.php?cgtid=9">Magazine</a></li>
+						<li><a href="./list_modify_item.php?cgtid=10">whisper for voice</a></li>
+						<li><a href="./list_modify_item.php?cgtid=11">audio books</a></li>
+						<li><a href="./list_modify_item.php?cgtid=12">Software books</a></li>
 					</ul>
 					</div>
 				</div>
@@ -181,12 +199,12 @@ $(function() {
 						</div>
 						<ul>
 							<h4>Toy & Baby</h4>
-							<li><a href="./list-item.php?cgtid=13">Toys Games</a></li>
-							<li><a href="./list-item.php?cgtid=14">Babys' clothing</a></li>
-							<li><a href="./list-item.php?cgtid=15">video games for kids</a></li>
-							<li><a href="./list-item.php?cgtid=16">Babys' Birthday</a></li>
-							<li><a href="./list-item.php?cgtid=17">Plush Toys</a></li>
-							<li><a href="./list-item.php?cgtid=18">Building block</a></li>
+							<li><a href="./list_modify_item.php?cgtid=13">Toys Games</a></li>
+							<li><a href="./list_modify_item.php?cgtid=14">Babys' clothing</a></li>
+							<li><a href="./list_modify_item.php?cgtid=15">video games for kids</a></li>
+							<li><a href="./list_modify_item.php?cgtid=16">Babys' Birthday</a></li>
+							<li><a href="./list_modify_item.php?cgtid=17">Plush Toys</a></li>
+							<li><a href="./list_modify_item.php?cgtid=18">Building block</a></li>
 						</ul>
 					</div>
 				</div>
@@ -197,12 +215,12 @@ $(function() {
 						</div>
 						<ul>
 							<h4>Clothing</h4>
-							<li><a href="./list-item.php?cgtid=19">shoes</a></li>
-							<li><a href="./list-item.php?cgtid=20">T-shirt</a></li>
-							<li><a href="./list-item.php?cgtid=21">Pants</a></li>
-							<li><a href="./list-item.php?cgtid=22">coats</a></li>
-							<li><a href="./list-item.php?cgtid=23">Jeans</a></li>
-							<li><a href="./list-item.php?cgtid=24">Skirt</a></li>
+							<li><a href="./list_modify_item.php?cgtid=19">shoes</a></li>
+							<li><a href="./list_modify_item.php?cgtid=20">T-shirt</a></li>
+							<li><a href="./list_modify_item.php?cgtid=21">Pants</a></li>
+							<li><a href="./list_modify_item.php?cgtid=22">coats</a></li>
+							<li><a href="./list_modify_item.php?cgtid=23">Jeans</a></li>
+							<li><a href="./list_modify_item.php?cgtid=24">Skirt</a></li>
 						</ul>
 					</div>		
 				</div>
@@ -230,7 +248,7 @@ $(function() {
 			<div class="footer3">
 				<ul class="website">
 					<h4 class="foot-title">Let Us Help You</h4>
-					<li><a href="changePassword.php">Change Password</a></li>
+					<li><a href="#">Your Account</a></li>
 					<li><a href="#">Payment & Refund</a></li>
 					<li><a href="#">Send & Delivery</a></li>
 					<li><a href="#">Help ...</a></li>

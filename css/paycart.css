@@ -1,0 +1,80 @@
+body{
+	margin-top: 0;
+}
+div#page{
+	margin-left: auto;
+	margin-right: auto;
+	width: 850px;
+}
+/******************************************************/
+div#address-select{
+	height: 350px;
+	margin-bottom: 80px;
+}
+div.add{
+	width: 425px;
+	height: 100px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: left;
+}
+div.add_detail{
+	width: 350px;
+	padding: 5px;
+	border: 3px solid rgb(100,100,100);
+}
+div#confirm{
+	height: 20px;
+	margin-top: 20px;
+}
+div#confirm input[type="submit"]{
+	width: 120px;
+	height: 40px;
+	float: right;
+	margin-top: 100px;
+	border-radius: 5px;
+	background-color: #1E90FF;
+}
+/******************************************************/
+
+
+
+
+
+/******************************************************/
+div#process{
+	height: 120px;
+}
+div.process-text{
+	float: left;
+	margin-top: 40px;
+	font-family: monospace;
+	font-size: 18px;
+	color: #e9a63b;
+	width: 120px;
+	height: 50px;
+	border: 3px solid rgb(100,100,100);
+	text-align: center;
+}
+div.arrow{
+	width: 100px;
+	height: 50px;
+	float: left;
+	margin-top: 40px;
+}
+div.arrow img{
+	width: 100px;
+	height: 50px;
+}
+/******************************************************/
+input#pay_button{
+	width: 120px;
+	height: 40px;
+	float: right;
+	border-radius: 5px;
+	background-color: #1E90FF;
+}
+/******************************************************/
+footer{
+	margin-top: 50px;
+}

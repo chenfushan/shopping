@@ -49,8 +49,8 @@
 			</p>
 			<ul id="quickmenu">
 				<li><a href="#">category</a></li>
-				<li><a href="#">order</a></li>
-				<li><a href="#">cart</a></li>
+				<li><a href="show_order.php">order</a></li>
+				<li><a href="cart.php">cart</a></li>
 				<li><a href="#">contact us</a></li>
 			</ul>
 		</div>
@@ -101,8 +101,8 @@
 			<ul id="quickmenu">
 				<li style="margin-right: 0; padding-right: 10px;"><a href="logout.php">logout</a></li>
 				<li><a href="#">category</a><b style="color:#ffffff">&nbsp&nbsp|</b></li>
-				<li><a href="#">order</a></li>
-				<li><a href="#">cart</a></li>
+				<li><a href="show_order.php">order</a></li>
+				<li><a href="cart.php">cart</a></li>
 				<li><a href="#">contact us</a></li>
 			</ul>
 		</div>
@@ -136,6 +136,75 @@
 				<span>@class ProjectManager Group two</span>
 			</ul>
 		</div>
+		<?php
+	}
+	function show_html_footer()
+	{
+		?>
+		<style>
+			div#footer{
+				width: 850px;
+				height: 170px;
+				margin-top: 80px;
+				font-size: 14px;
+			}
+			div.footer1{
+				width: 230px;
+				height: 150px;
+				float: left;
+				margin-left: 30px;
+			}
+			div.footer2{
+				width: 250px;
+				height: 150px;
+				float: left;
+				margin-right: 20px;
+			}
+			div.footer3{
+				width: 250px;
+				height: 150px;
+				float: left;
+			}
+			div#footer ul li{
+				font-size: 14px;
+				margin-bottom: 10px;
+				list-style: none;
+				color: #ffffff;
+			}
+		</style>
+		<footer>
+			<div id="footer">
+				<div id="footer">
+					<div class="footer1">
+						<ul class="website">
+							<h4 class="foot-title">Get To Know Us</h4>
+							<li><a href="#">Careers</a></li>
+							<li><a href="#">Investor Relations</a></li>
+							<li><a href="#">Our Planet</a></li>
+							<li><a href="#">Community</a></li>
+						</ul>
+					</div>
+					<div class="footer2">
+						<ul class="website">
+							<h4 class="foot-title">Make Money With Us</h4>
+							<li><a href="#">Sell on TianGou</a></li>
+							<li><a href="#">Advertise Your Products</a></li>
+							<li><a href="#">Become an Affiliate</a></li>
+							<li><a href="#">Independently Publish With Us</a></li>
+						</ul>
+					</div>
+					<div class="footer3">
+						<ul class="website">
+							<h4 class="foot-title">Let Us Help You</h4>
+							<li><a href="#">Your Account</a></li>
+							<li><a href="#">Payment & Refund</a></li>
+							<li><a href="#">Send & Delivery</a></li>
+							<li><a href="#">Help ...</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
 		<?php
 	}
 	function show_logo()
@@ -211,7 +280,7 @@
 			?>
 			<div class="item">
 	 			<div class="item-pic">
-	 				<?php echo "<img src=\"./images/item-pic/".$row['id'].".png\" alt=\"Laptop\">"; ?>
+	 				<?php echo "<img src=\"./images/item-pic/".$row['pic_name']."\" alt=\"Laptop\">"; ?>
 	 			</div>
  				<div class="item-info">
  					<div class="item-name">
@@ -311,7 +380,7 @@
 			</style>
 			<div class="nav-item-list">
 				<div class="nav-item-list-img">
-					<?php echo "<img src=\"./images/item-pic/".$row['id'].".png\" alt=\"Laptop\">"; ?>
+					<?php echo "<img src=\"./images/item-pic/".$row['pic_name']."\" alt=\"Laptop\">"; ?>
 				</div>
 				<div class="nav-item-list-detail">
 					<?php 
@@ -351,5 +420,6 @@
 			}
 		}
 	}
+
 
 ?>

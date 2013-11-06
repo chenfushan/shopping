@@ -34,6 +34,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Order</title>
+	<script src="./js/jquery.js"></script>
+	<script src="./jqueryui/js/jqueryui.js"></script>
+	<script src="./js/order.js"></script>
 	<link rel="shortcut icon" href="./images/logo.ico">
 	<link rel="stylesheet" href="./css/order.css">
 </head>
@@ -57,7 +60,7 @@
 			<div class="arrow"><img src="./images/arrow.png" alt="arrow"></div>
 			<div class="process-text">Confirm received!</div>
 			<div class="arrow"><img src="./images/arrow.png" alt="arrow"></div>
-			<div class="process-text">Write your appraise</div>
+			<div class="process-text">Write your review</div>
 		</div>
 		<div id="order">
 			<div id="order-detail">
@@ -70,7 +73,7 @@
 					<?php 
 						foreach ($item_detail as $row) {
 							echo "<div id=\"item\">
-								<img src=\"./images/item-pic/".$id.".png\" alt=\"item pic\">
+								<img src=\"./images/item-pic/".$row['pic_name']."\" alt=\"item pic\">
 								<a href=\"./item-details.php?itemid=".$id."\"><span>".$row['name']."</span></a>
 								</div>";
 							echo "<div id=\"num\">
@@ -93,6 +96,8 @@
 				<?php 
 			//	echo $username;
 					$result = get_address($username);
+					$addnum = count($result,0);
+			//		echo $addnum;
 					if ($result == false) {
 						?>
 						<a href="add_address.php" target="view_window">Add a new Address</a>
@@ -109,6 +114,7 @@
 						</div>
 						<?php
 						echo "<input type=\"hidden\" name=\"order_id\" value=\"".$order_id."\">
+						<input type=\"hidden\" id=\"addnum\" value=\"".$addnum."\" />
 					 	<input type=\"hidden\" name=\"id\" value=\"".$id."\">
 					 	<input type=\"hidden\" name=\"total_price\" value=\"".$total_price."\">
 					 	<div id=\"confirm\"><input type=\"submit\" value=\"Confirm\"></div>"; 

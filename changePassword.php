@@ -1,37 +1,6 @@
 <?php 
 	require_once 'include.php';
 	session_start();
-	$order_id = $_POST['order_id'];
-	if (isset($_POST['add'])) {
-		$addressid = $_POST['add'];
-	}else{
-		?>
-		<!doctype html>
-		<html lang="en">
-		<head>
-			<meta charset="UTF-8">
-			<title>Please Login</title>
-			<link rel="shortcut icon" href="./images/logo.ico">
-			<meta http-equiv="refresh" content="1; url=order.php">
-		</head>
-		<body>
-			<p>Please Select a address !</p>
-		</body>
-		</html>
-		<?php
-		exit();
-	}
-	
-	$total_price = $_POST['total_price'];
-	// $id = $_POST['id'];
-	// $name = $_POST['name'];
-	// $address = $_POST['address'];
-	// $city = $_POST['city'];
-	// $state = $_POST['state'];
-	// $country = $_POST['country'];
-	// $zip = $_POST['zip'];
-	
-	// $phonenumber = $_POST['phonenumber'];
 	if(isset($_SESSION['username']))
 	{
 		$username = $_SESSION['username'];
@@ -60,16 +29,11 @@
 	<title>Order</title>
 	<script src="./js/jquery.js"></script>
 	<script src="./jqueryui/js/jqueryui.js"></script>
-	<script src="./js/payment.js"></script>
 	<link rel="stylesheet" href="./css/order.css">
 	<link rel="stylesheet" href="./css/payment.css">
+	<link rel="stylesheet" href="./css/changePassword.css">
 	<link rel="shortcut icon" href="./images/logo.ico">
-	<script>
-		function notif () {
-			alert("Pay Successfully ! Please Wait ...");
-			update_orderid($order_id);
-		}
-	</script>
+	<script src="./js/changePassword.js"></script>
 </head>
 <body>
 	<div id="page">
@@ -84,7 +48,7 @@
 				 ?>
 			</div>
 		</header>
-		<div id="process">
+<!-- 		<div id="process">
 			<div class="process-text">Insert the order</div>
 			<div class="arrow"><img src="./images/arrow.png" alt="arrow"></div>
 			<div class="process-text">Pay for order</div>
@@ -92,29 +56,24 @@
 			<div class="process-text">Confirm received!</div>
 			<div class="arrow"><img src="./images/arrow.png" alt="arrow"></div>
 			<div class="process-text">Write your review</div>
-		</div>
+		</div> -->
 		<div id="pay_result">
-			<?php 
-				$pay = payment($total_price);
-				if ($pay) {
-					if(insert_address($order_id,$addressid))
-						{
-							echo "Order Have Been Saved ! Please Pay For Order !";
-						}
-						else{
-								echo "<br>Order error! Please Retry!";
-						}
-				}else{
-					echo "Order error! Please Retry!";
-				}
-				echo "<input type=\"hidden\" id=\"order_id\" value=\"".$order_id."\" />";
-			 ?>
-			 <br>
-			 <input id="pay_button" type="button" value="Pay" />
-			 <div id="back_homepage">
-			 	<a href="./index.php">Back HomePage>></a>
-			 </div>
+			<div id="changePassword">
+				<form>
+					<span>Old Password:</span>
+					<input type="password" id="oldPassword" maxlength="20" required>
+					<br>
+					<span>New Password:</span>
+					<input type="password" id="newPassword" maxlength="20" required>
+					<br>
+					<span>Confirm Password:</span>
+					<input type="password" id="confirmPassword" maxlength="20" required>
+					<br>
+					<input type="button" id="change" value="Submit">
+				</form>
+			</div>
 		</div>
+		<hr>
 		<footer>
 			<div id="footer">
 				<div id="footer">

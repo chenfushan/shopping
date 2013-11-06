@@ -49,7 +49,7 @@
 			?>
 			<div id="item">
 				<div id="pic">
-					<?php echo "<img src=\"./images/item-pic/".$id.".png\" alt=\"Item-PNG\">"; 
+					<?php echo "<img src=\"./images/item-pic/".$row['pic_name']."\" alt=\"Item-PNG\">"; 
 					?>
 				</div>
 				<div id="info">
@@ -63,9 +63,10 @@
 						<div id="num">
 							<?php 
 								echo "<form action=\"./order.php?itemid=".$id."\" method=\"post\">
-									<input type=\"number\" id=\"number\" name=\"itemnum\" value=\"1\" min=\"1\"><br>
+									<input type=\"number\" id=\"number\" name=\"itemnum\" value=\"1\" min=\"1\">
+									<span>In Stock: 50</span><br>
 									<input type=\"button\" value=\"Add to cart\" />
-									<input type=\"submit\" value=\"Buy\">
+									<input type=\"submit\" id=\"buy_button\" value=\"Buy\">
 									</form>";
 							 ?>
 						</div>
@@ -89,7 +90,7 @@
 					<ul>
 						<li class="tablist"><a href="#tab1"><span>Information
 							</span></a></li>
-						<li class="tablist"><a href="#tab2"><span>Appraise</span></a></li>
+						<li class="tablist"><a href="#tab2"><span>comment</span></a></li>
 					</ul>
 					<div id="tab1">
 						<span><?php echo $item_array['info']; ?></span>
@@ -97,14 +98,13 @@
 					<div id="tab2">
 						<?php 
 							if (!is_array($message_array)) {
-								echo "There is no Appraise for this item!";
+								echo "There is no comment for this item!";
 							}else{
 								foreach ($message_array as $row) {
-									echo "<span>".$row['message']."</span>";
+									echo "<div style=\"margin-top: 20px;\">".$row['content']."</div><hr>";
 								}
 							}
 						 ?>
-						<span>Evaluate</span>
 					</div>
 				</div>
 			</div>
