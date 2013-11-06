@@ -1,0 +1,47 @@
+body{
+	margin-top: 0;
+}
+div#page{
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+}
+div#writeReviewForm{
+	width: 330px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	padding-top: 50px;
+	padding-left: 50px;
+	padding-bottom: 50px;
+	background-color: #e9a63b;
+	border-radius: 15px;
+}
+form{
+	height: 220px;
+}
+textarea{
+	border: 0;
+}
+input[type=button]{
+	border: 0;
+	width: 70px;
+	height: 35px;
+	margin-top: 20px;
+	margin-left: 190px;
+}
+div#footer{
+	margin-top: 50px;
+}
+div.footer1, .footer2, .footer3{
+	width: 270px;
+	float: left;
+}
+ul.website li{
+	margin-top: 10px;
+	list-style: none;
+}
+li a{
+	text-decoration: none;
+}

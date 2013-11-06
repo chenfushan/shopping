@@ -33,9 +33,14 @@ div#name{
 	width: 400px;
 	height: 100px;
 }
+div#name span{
+	font-size: 21px;
+	font-weight: bold;
+}
 div#price{
 	width: 400px;
 	height: 100px;
+	color: red;
 }
 div#num{
 	width: 400px;
@@ -50,11 +55,26 @@ div#num input[type=number]{
 	height: 25px;
 }
 div#num input[type=submit]{
-	width: 100px;
-	height: 30px;
+	width: 120px;
+	height: 40px;
+	margin-top: 70px;
+	margin-left: 20px;
+	border: 2px solid #000080;
+	border-radius: 5px;
+	background-color: #1E90FF;
+}
+div#num input[type=button]{
+	width: 120px;
+	height: 40px;
+	border: 2px solid #000080;
+	border-radius: 5px;
+	background-color: #e9a63b;
 	margin-top: 70px;
 }
 /******************************************************/
+div#details{
+	height: 500px;
+}
 div#introduce{
 	width: 550px;
 	height: 500px;
@@ -104,9 +124,23 @@ div#tab2{
 	display: none;
 }
 div#shop-nav{
-	width: 280px;
-	height: 500px;
+	width: 250px;
+	height: 480px;
+	margin-right: 30px;
+	margin-top: 20px;
 	float: left;
+	border-top: 3px solid;
+	border-radius: 4px;
+	padding-top: 10px;
+	text-align: center;
+}
+div#shop-nav span{
+	font-size: 16px;
+	font-family: Georgia;
+}
+div#nav-list{
+	margin-top: 10px;
+	border-top: 2px solid;
 }
 /******************************************************/
 div#footer{

@@ -1,29 +1,42 @@
-function check_u () {
-	obj1 = document.getElementById('username');
-	obj2 = document.getElementById('u_e');
-	while(obj2.hasChildNodes()){
-		obj2.removeChild(obj2.childNodes[0]);
-	}
-	var pattern = /[^\x00-\xff]/g;
-	if (pattern.test(obj1.value) || obj1.value=="") {
-		sub_t = document.createTextNode("Username can't be empty or chinese");
-		obj2.appendChild(sub_t);
-	}
-}
-function check_p () {
-	obj1 = document.getElementById('password');
-	obj2 = document.getElementById('p_w');
-	while(obj2.hasChildNodes()){
-		obj2.removeChild(obj2.childNodes[0]);
-	}
-	var pattern = /^\w+$/;
-	// if (pattern.test(obj1.value) || obj1.value == "") {
-	// 	sub_t = document.createTextNode("Password must be English characters or numbers or underline!");
-	// 	obj2.appendChild(sub_t);
-	// }
-	if (obj1.value.length < 6 || obj1.value.length > 16) {
-		sub_t = document.createTextNode("PW must between 6 and 16!");
-		obj2.appendChild(sub_t);
-	}
-
-}
+$(document).ready(function() {
+	$('input#login_button').click(
+		function() {
+//			alert("click");
+			var username = $('input#username').val();
+			var password = $('input#password').val();
+			if (username == '') {
+				alert("username can't be empty !");
+				return ;
+			}
+			if (password == '') {
+				alert("password can't be empty !");
+				return ;
+			}
+			if (password.length< 6 || password.length > 16) {
+				alert("password's length must be in 6 and 16!");
+				return ;
+			}
+			var xmlhttp;
+			if (window.XMLHttpRequest) {
+				xmlhttp = new XMLHttpRequest();
+			}else{
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			var url = "username="+username+"&password="+password;
+//			alert(url);
+			xmlhttp.open("POST","login_result.php",true);
+			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var Info = xmlhttp.responseText;
+					if (Info == "true") {
+						location.href = "index.php";
+					}else{
+						alert(Info);
+					}
+				}
+			}
+			xmlhttp.send(url);
+		}
+		);
+});

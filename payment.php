@@ -2,7 +2,26 @@
 	require_once 'include.php';
 	session_start();
 	$order_id = $_POST['order_id'];
-	$addressid = $_POST['add'];
+	if (isset($_POST['add'])) {
+		$addressid = $_POST['add'];
+	}else{
+		?>
+		<!doctype html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Please Login</title>
+			<link rel="shortcut icon" href="./images/logo.ico">
+			<meta http-equiv="refresh" content="1; url=order.php">
+		</head>
+		<body>
+			<p>Please Select a address !</p>
+		</body>
+		</html>
+		<?php
+		exit();
+	}
+	
 	$total_price = $_POST['total_price'];
 	// $id = $_POST['id'];
 	// $name = $_POST['name'];
@@ -34,17 +53,21 @@
 		exit();
 	}
  ?>
- <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Order</title>
+	<script src="./js/jquery.js"></script>
+	<script src="./jqueryui/js/jqueryui.js"></script>
+	<script src="./js/payment.js"></script>
 	<link rel="stylesheet" href="./css/order.css">
 	<link rel="stylesheet" href="./css/payment.css">
 	<link rel="shortcut icon" href="./images/logo.ico">
 	<script>
 		function notif () {
 			alert("Pay Successfully ! Please Wait ...");
+			update_orderid($order_id);
 		}
 	</script>
 </head>
@@ -68,21 +91,26 @@
 			<div class="arrow"><img src="./images/arrow.png" alt="arrow"></div>
 			<div class="process-text">Confirm received!</div>
 			<div class="arrow"><img src="./images/arrow.png" alt="arrow"></div>
-			<div class="process-text">Write your appraise</div>
+			<div class="process-text">Write your review</div>
 		</div>
 		<div id="pay_result">
 			<?php 
 				$pay = payment($total_price);
 				if ($pay) {
-					insert_address($order_id,$addressid);
-					update_orderid($order_id);
-					echo "Order Have Been Saved ! Please Pay For Order !";
+					if(insert_address($order_id,$addressid))
+						{
+							echo "Order Have Been Saved ! Please Pay For Order !";
+						}
+						else{
+								echo "<br>Order error! Please Retry!";
+						}
 				}else{
 					echo "Order error! Please Retry!";
 				}
+				echo "<input type=\"hidden\" id=\"order_id\" value=\"".$order_id."\" />";
 			 ?>
 			 <br>
-			 <input type="button" value="Pay" onclick="notif()" />
+			 <input id="pay_button" type="button" value="Pay" />
 			 <div id="back_homepage">
 			 	<a href="./index.php">Back HomePage>></a>
 			 </div>

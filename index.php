@@ -230,7 +230,7 @@ $(function() {
 			<div class="footer3">
 				<ul class="website">
 					<h4 class="foot-title">Let Us Help You</h4>
-					<li><a href="#">Your Account</a></li>
+					<li><a href="changePassword.php">Change Password</a></li>
 					<li><a href="#">Payment & Refund</a></li>
 					<li><a href="#">Send & Delivery</a></li>
 					<li><a href="#">Help ...</a></li>

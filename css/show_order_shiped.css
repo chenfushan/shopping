@@ -1,0 +1,7 @@
+form input[type=submit]{
+	margin-top: 20px;
+	height: 40px;
+	width: 100px;
+	border-radius: 5px;
+	background-color: #00BFFF;
+}
